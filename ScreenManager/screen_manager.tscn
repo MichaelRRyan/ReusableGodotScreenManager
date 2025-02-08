@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://2kytxl6on7v8"]
+
+[ext_resource type="PackedScene" uid="uid://b4mxefha17sy6" path="res://Screens/main_menu.tscn" id="1_44be3"]
+[ext_resource type="PackedScene" uid="uid://df2awoiaeqt6i" path="res://Screens/settings_menu.tscn" id="2_t2gpc"]
+
+[node name="ScreenManager" type="CanvasLayer"]
+
+[node name="MainMenu" parent="." instance=ExtResource("1_44be3")]
+visible = false
+
+[node name="SettingsMenu" parent="." instance=ExtResource("2_t2gpc")]
