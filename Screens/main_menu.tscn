@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://b4mxefha17sy6"]
+[gd_scene load_steps=2 format=3 uid="uid://b4mxefha17sy6"]
+
+[ext_resource type="Script" path="res://Screens/main_menu.gd" id="1_xdue1"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xdue1")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 1
@@ -46,3 +49,7 @@ text = "Settings"
 [node name="Exit" type="Button" parent="BoxContainer/Buttons"]
 layout_mode = 2
 text = "Exit"
+
+[connection signal="pressed" from="BoxContainer/Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="BoxContainer/Buttons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="BoxContainer/Buttons/Exit" to="." method="_on_exit_pressed"]

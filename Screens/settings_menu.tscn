@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://df2awoiaeqt6i"]
+[gd_scene load_steps=2 format=3 uid="uid://df2awoiaeqt6i"]
+
+[ext_resource type="Script" path="res://Screens/settings_menu.gd" id="1_r2ci1"]
 
 [node name="SettingsMenu" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_r2ci1")
 
 [node name="BoxContainer" type="BoxContainer" parent="."]
 layout_mode = 1
@@ -95,3 +98,5 @@ text = "Back"
 custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 text = "Apply Changes"
+
+[connection signal="pressed" from="BoxContainer/HBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

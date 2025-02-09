@@ -1,11 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://2kytxl6on7v8"]
+[gd_scene load_steps=4 format=3 uid="uid://2kytxl6on7v8"]
 
 [ext_resource type="PackedScene" uid="uid://b4mxefha17sy6" path="res://Screens/main_menu.tscn" id="1_44be3"]
+[ext_resource type="Script" path="res://ScreenManager/screen_manager.gd" id="1_trq2h"]
 [ext_resource type="PackedScene" uid="uid://df2awoiaeqt6i" path="res://Screens/settings_menu.tscn" id="2_t2gpc"]
 
 [node name="ScreenManager" type="CanvasLayer"]
+script = ExtResource("1_trq2h")
 
 [node name="MainMenu" parent="." instance=ExtResource("1_44be3")]
-visible = false
 
 [node name="SettingsMenu" parent="." instance=ExtResource("2_t2gpc")]
+visible = false
+
+[connection signal="play_pressed" from="MainMenu" to="." method="_on_main_menu_play_pressed"]
+[connection signal="settings_pressed" from="MainMenu" to="." method="_on_main_menu_settings_pressed"]
+[connection signal="back_pressed" from="SettingsMenu" to="." method="_on_settings_menu_back_pressed"]
